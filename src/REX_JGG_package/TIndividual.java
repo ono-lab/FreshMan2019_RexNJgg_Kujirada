@@ -31,10 +31,8 @@ public class TIndividual {
 		return new TIndividual(this);
 	}
 
-	// ??????????
 	public TIndividual copyFrom(TIndividual src) {
 		fVector.copyFrom(src.fVector);
-		fVector.setDimension(src.fVector.getDimension());
 		fEvaluationValue = src.fEvaluationValue;
 		return this;
 	}

@@ -112,7 +112,7 @@ public class TVector {
 	}
 
 	// スカラー積(a倍)
-	public TVector scolarProduct(double a) {
+	public TVector scalarProduct(double a) {
 		for(int i = 0; i < fData.length; ++i) {
 			fData[i] *= a;
 		}
@@ -120,7 +120,7 @@ public class TVector {
 	}
 
 	// 要素ごとの積
-	public TVector elementwiseProduict(TVector v) {
+	public TVector elementwiseProduct(TVector v) {
 		for(int i = 0; i < fData.length; ++i) {
 			fData[i] *= v.fData[i];
 		}
