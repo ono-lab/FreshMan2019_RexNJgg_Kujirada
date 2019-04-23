@@ -4,22 +4,23 @@
 package REX_JGG_package;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
- * @author ren54
- *
- */
+
 public class TVectorTest {
 
 	private static void TVectorTest() {
 		// オブジェクト生成
 		TVector v1 = new TVector();
+		System.out.println("v1 = new TVector():"+v1);
 
 		v1.setDimension(3);
+		System.out.println("v1.setDimension(3)");
 		System.out.println("v1:"+v1+", v1.getDimension():"+v1.getDimension());
 
 		System.out.println("v1:"+v1);
@@ -50,17 +51,20 @@ public class TVectorTest {
 		System.out.println("v1.toString():" + v1.toString());
 
 
-		String filename = ".\\test.txt";
+		String filename = ".\\TVectorTest.txt";
 		try {
-			PrintWriter pw = new PrintWriter(filename);
+			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(filename)));
 			v1.writeTo(pw);
 			pw.close();
 			v1.setDimension(3);
 			System.out.println("v1.writeTo("+filename+"); v1.setDimension(3):");
 			System.out.println("v1:"+v1);
+
+			System.out.println("v1の次元を変更");
 			v1.setDimension(5);
 			System.out.println("v1.writeTo("+filename+"); v1.setDimension(5):");
 			System.out.println("v1:"+v1);
+
 			BufferedReader br = new BufferedReader(new FileReader(filename));
 			v1.readFrom(br);
 			br.close();
@@ -105,6 +109,7 @@ public class TVectorTest {
 
 	public static void main(String[] args) {
 		TVectorTest();
+
 	}
 
 }

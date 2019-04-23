@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+
 public class TVector {
 	private double[] fData;
 
@@ -146,7 +147,7 @@ public class TVector {
 		return this;
 	}
 
-	// ???????????
+	// 要素をすべてaに変更
 	public TVector fill(double a) {
 		for(int i = 0; i < fData.length; ++i) {
 			fData[i] = a;

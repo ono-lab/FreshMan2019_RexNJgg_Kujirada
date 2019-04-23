@@ -4,7 +4,7 @@
 package REX_JGG_package;
 
 /**
- * @author ren54
+ * @author ren
  *
  */
 public class Main {

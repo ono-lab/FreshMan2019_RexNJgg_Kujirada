@@ -7,10 +7,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
- * @author ren54
- *
- */
+
 public class TIndividual {
 	private TVector fVector;
 	private double fEvaluationValue;
