@@ -1,3 +1,5 @@
+// 鯨田連也
+
 package REX_JGG_package;
 
 import java.io.BufferedReader;
