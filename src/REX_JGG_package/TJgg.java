@@ -42,7 +42,7 @@ public class TJgg {
 	}
 
 	public void doOneGeneration() {
-		// 1. 複製に用いる親個体の選択
+		// 1. 複製に用いる親個体の選択（複製選択）
 
 		// 選択する親個体
 		TPopulation parents = new TPopulation();
@@ -52,10 +52,21 @@ public class TJgg {
 		int[] fNoOfSelParents = new int[fPopulation.getSize()];
 
 		// n+1個の親個体の選択
+		// 非復元抽出
 		for(int i = 0; i < parents.getSize(); ++i) {
-			// 選択した元集団の親個体のインデックスを保存
-			int index = fRandom.nextInt(fPopulation.getSize());
+			// 選択用乱数格納変数
+			int index;
+			while(true) {
+				// 選択した元集団の親個体のインデックスを保存
+				index = fRandom.nextInt(fPopulation.getSize());
+				boolean duplicated = false;
+				for(int j = 0; j < i; j ++) {
+					duplicated |= (fNoOfSelParents[i] == index);
+				}
+				if (!duplicated) break;
+			}
 			fNoOfSelParents[i] = index;
+
 			// 親個体の選択
 			parents.getIndividual(i).copyFrom(fPopulation.getIndividual(index));
 		}
@@ -80,7 +91,7 @@ public class TJgg {
 		}
 
 
-		// 4. 複製選択
+		// 4. 生存選択
 		// fNoOfSelParents have information of parents who joined crossover
 
 		// 子個体のソート

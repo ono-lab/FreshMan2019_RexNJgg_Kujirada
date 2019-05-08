@@ -50,8 +50,8 @@ public class TRex {
 				double epsilon = sigma * fRandom.nextGaussian();
 
 				// y_iを計算用にセット
-				temp = parents.getIndividual(j).getVector().clone();
-				//temp.copyFrom(parents.getIndividual(j).getVector()); ←だめ．
+				//temp = parents.getIndividual(j).getVector().clone();
+				temp.copyFrom(parents.getIndividual(j).getVector());	//OK.
 
 				// y_i - <y>
 				temp.substract(yMean);

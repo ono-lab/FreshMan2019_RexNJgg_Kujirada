@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
  
-df = pd.DataFrame.from_csv('RexJggKTableP14K5_no1.csv', header=1);
+df = pd.DataFrame.from_csv('RexJggKTableP14K5_no4.csv', header=1);
 print(df)
 df.plot(legend=False);
  
